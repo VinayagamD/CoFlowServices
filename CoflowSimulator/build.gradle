@@ -1,0 +1,28 @@
+group 'com.sadhiya.coflowsimulator'
+version '1.0-SNAPSHOT'
+
+subprojects {
+
+    apply plugin: "java"
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+
+project(":CoflowService"){
+
+    dependencies {
+        implementation project(":Simulator")
+    }
+}
